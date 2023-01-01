@@ -1,0 +1,33 @@
+Configuración y Deploy en Docker
+1. Abrir una ventana de comandos “CMD”
+2. Copiar y ejecutar los siguientes comandos:
+
+• docker run -it --rm -d -p 8888:8080 --name tomcat-container tomcat:9.0
+Docker descargara el contenedor de tomcat y lo ejecutara en Segundo plano en el Puerto 88888
+
+• docker exec -it tomcat-container /bin/bash
+Docker se desplazará a las carpetas de instalación de Tomcat
+
+• cd webapps.dist
+Docker cambiará de carpeta a /webapps.dist
+
+• cp -r ./* /usr/local/tomcat/webapps
+Docker copiara el contenido de /webapps.dist a /webapp
+
+• cd ..
+Docker se desplazará a una carpeta superior, en este caso a /tomcat
+
+• cd webapps
+Docker se desplazará a la carpeta /webapps
+
+• ls –a
+Docker enlistará el contenido de /webapps para validar que el copiado fue correcto
+
+• exit
+Docker terminará la conexión a los directorios del contenedor de tomcat.
+
+• cd C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\
+Desplazamos la ventana de comandos a la carpeta de webapps de tomcat instalado por nosotros donde ya se encuentra el war del proyecto.
+
+• docker cp certiprof.war tomcat-container:/usr/local/tomcat/webapps/certiprof.war
+Copiamos el war a los directorios del contenedor de tomcat instalado en Docker.
