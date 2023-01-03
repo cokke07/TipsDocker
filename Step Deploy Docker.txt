@@ -1,3 +1,4 @@
+Estos pasos son previos a integrar Jenkins, Git y Tomcat con el projecto maven
 Configuración y Deploy en Docker
 1. Abrir una ventana de comandos “CMD”
 2. Copiar y ejecutar los siguientes comandos:
